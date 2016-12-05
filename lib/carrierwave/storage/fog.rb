@@ -1,9 +1,9 @@
 CarrierWave.configure do |config|
-  config.fog_provider = 'fog/aws'                        # required
-  config.fog_credentials = {
+    config.fog_provider = 'fog/aws'
+    config.fog_credentials = {
     provider:              'AWS',                        # required
-    aws_access_key_id:     'AKIAJ2UYECZMKBQOOI3A',                        # required
-    aws_secret_access_key: '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'                        # required
+    aws_access_key_id:     ENV["aws_access_key_id"],                        # required
+    aws_secret_access_key: ENV["aws_secret_access_key"]                       # required
   }
-  config.fog_directory  = 'mynewyelpapp'                          # required
+  config.fog_directory  = ENV["fog_directory"]                        # required
 end
