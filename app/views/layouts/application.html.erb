@@ -2,10 +2,10 @@
 <html>
   <head>
     <title>MyYelp</title>
+    <%= render '/layouts/bootstrap' %>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= render '/layouts/bootstrap' %>
   </head>
 
   <body>
@@ -13,6 +13,7 @@
         <%= render '/layouts/navbar' %>
         <div class="container-fluid">
           <%= yield %>
+          <%= image_tag "https://s3.amazonaws.com/mynewyelpapp/buildings.jpg" %>
           <%= render '/layouts/footer' %>
         </div>
   </body>
