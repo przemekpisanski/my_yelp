@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :reviews, except: [:show, :index]
   devise_for :users
-  resources :restaurants
+  resources :restaurants do
+    resources :reviews, except: [:show, :index]  #nest reviews routes in Restaurant routes
+  end
   get 'pages/about'
   get 'pages/contact'
   root 'restaurants#index'
